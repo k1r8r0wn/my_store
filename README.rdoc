@@ -1,0 +1,3 @@
+== My Store app
+
+This is simple store app, crated for education purposes.
