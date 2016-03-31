@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   before_action :find_item,      only: [:show, :edit, :update, :destroy, :upvote]
   before_action :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
@@ -63,15 +64,12 @@ class ItemsController < ApplicationController
   private
 
   def find_item
-    @item = Item.find(params[:id])
+    @item = Item.where(id: params[:id]).first
+    render_404 unless @item
   end
 
   def item_params
     params.require(:item).permit(:price, :name, :real, :weight, :description)
-  end
-
-  def check_if_admin
-    render text: 'Access denied', status: 404 unless params[:admin]
   end
 
 end
