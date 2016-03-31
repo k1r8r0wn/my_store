@@ -1,3 +1,26 @@
-<% @items.each do |i| %>
-  <p><%= link_to i.name, item_path(i) %></p>
+<h1>Items</h1>
+
+<% if @items.empty? %>
+  <b>No items in the store</b>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %>.</td>
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><%= item.price %> $</td>
+        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>
