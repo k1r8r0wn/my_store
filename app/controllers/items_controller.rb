@@ -1,9 +1,16 @@
 class ItemsController < ApplicationController
-  before_action :find_item,      only: [:show, :edit, :update, :destroy]
+  before_action :find_item,      only: [:show, :edit, :update, :destroy, :upvote]
   before_action :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
+  # /items GET
   def index
     @items = Item.all
+  end
+
+  # /items/expensive GET
+  def expensive
+    @items = Item.where('price > 1000')
+    render :index
   end
 
   # /items/:id GET
@@ -18,7 +25,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  # /items/edit/:id GET
+  # /items/:id/edit GET
   def edit; end
 
   # /items POST
@@ -44,6 +51,12 @@ class ItemsController < ApplicationController
   # /items/:id DELETE
   def destroy
     @item.destroy
+    redirect_to items_path
+  end
+
+  # /items/:id/upvote
+  def upvote
+    @item.increment!(:votes_count)
     redirect_to items_path
   end
 

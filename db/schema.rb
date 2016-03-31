@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331164446) do
+ActiveRecord::Schema.define(version: 20160331212141) do
 
   create_table "items", force: :cascade do |t|
     t.float    "price"
     t.string   "name"
     t.boolean  "real"
     t.float    "weight"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "description"
+    t.integer  "votes_count", default: 0
   end
 
 end
