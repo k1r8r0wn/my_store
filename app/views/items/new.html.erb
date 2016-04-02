@@ -1,10 +1,8 @@
 <h1>Create new item</h1>
 
 <%= form_for @item do |f| %>
-  <p>Price: <%= f.text_field :price %></p>
-  <p>Name: <%= f.text_field :name %></p>
-  <p>Description: <%= f.text_field :description %></p>
-  <p>Weight: <%= f.text_field :weight %></p>
 
+  <%= render partial: 'form', locals: { f: f } %>
   <p><%= f.submit 'Create item' %></p>
+
 <% end %> 
