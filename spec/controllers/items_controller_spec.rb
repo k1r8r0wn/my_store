@@ -2,22 +2,6 @@ require 'rails_helper'
 
 describe ItemsController, type: :controller do
 
-  def self.it_renders_404_page_whwn_item_is_not_found(*actions)
-    actions.each do |a|
-      it "#{a} renders 404 page when item is not found" do
-        verb = if a == :update
-                 "PATCH"
-               elsif a == :destroy
-                 "DELETE"
-               else
-                 "GET"
-               end
-        process a, verb, { id: 0 }
-        expect(response.status).to eq(404)
-      end
-    end
-  end
-
   it_renders_404_page_whwn_item_is_not_found :show, :edit, :update, :destroy
 
   describe 'show action' do
