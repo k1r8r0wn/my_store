@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   root 'items#index'
 
   resources :items do
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
     get 'expensive', on: :collection
   end
 
+  get 'admin/users_count' => 'admin#users_count'
 end
