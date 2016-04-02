@@ -7,4 +7,6 @@ class Item < ActiveRecord::Base
   has_many :carts, through: :positions
   has_many :comments, as: :commentable
 
+  mount_uploader :image, ImageUploader
+
 end
