@@ -2,6 +2,6 @@
 
 <ul>
   <li><%= @item.price %> $</li>
-  <li><%= @item.description %></li>
+  <li><%= urls_to_links(urls_to_images(@item.description)) %></li>
   <li>Weight: <%= @item.weight %> pounds</li>
 </ul>
