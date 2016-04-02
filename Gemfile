@@ -37,6 +37,6 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  gem 'factory_girl', '~> 4.5'
+  gem 'factory_girl_rails', '~> 4.6'
   gem 'simplecov', '~> 0.11.2', require: false
 end

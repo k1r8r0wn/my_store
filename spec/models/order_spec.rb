@@ -1,15 +1,17 @@
 require 'rails_helper'
 
 describe Order, type: :model do
-  it 'calculates the total price of the order' do
-    item1 = Item.new(price: 10)
-    item2 = Item.new(price: 10)
 
-    order = Order.new
+  it 'calculates the total price of the order' do
+    item1 = create(:item)
+    item2 = create(:item, price: 20)
+
+    order = create(:order)
     order.items << item1
     order.items << item2
 
     order.calculate_total
-    expect(order.total).to eq(20)
+    expect(order.total).to eq(30)
   end
+
 end
