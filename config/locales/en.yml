@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  item:
+    price: 'Price'
+    description: 'Description'
+    weight: 'Weight'
+
+  activerecord:
+    models:
+      item: 'Item'
+    attributes:
+      item:
+        price: 'Price'
+        name: 'Name'
+        description: 'Description'
+        weight: 'Weight'
+        image: 'Image'
