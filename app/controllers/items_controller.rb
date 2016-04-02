@@ -37,8 +37,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     if @item.errors.empty?
+      flash[:success] = 'Your item is successfully created!'
       redirect_to item_path(@item) # /items/:id
     else
+      flash.now[:error] = 'You made mistakes in your form. Please correct them.'
       render :new
     end
   end
@@ -47,8 +49,10 @@ class ItemsController < ApplicationController
   def update
     @item.update_attributes(item_params)
     if @item.errors.empty?
+      flash[:success] = 'Your item is successfully updated!'
       redirect_to item_path(@item)
     else
+      flash.now[:error] = 'You made mistakes in your form. Please correct them.'
       render :edit
     end
   end
@@ -56,6 +60,7 @@ class ItemsController < ApplicationController
   # /items/:id DELETE
   def destroy
     @item.destroy
+    flash[:success] = 'Your item is successfully deleted!'
     redirect_to items_path
   end
 
