@@ -1,0 +1,5 @@
+%h2= @item.name
+%ul
+  %li #{@item.price}$
+  %li= urls_to_links(urls_to_images(@item.description))
+  %li Weight: #{@item.weight} pounds

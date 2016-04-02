@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title MyStore
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    %p.notice= notice
+    %p.alert= alert
+
+    = render partial: 'layouts/admin_panel'
+    = render partial: 'layouts/session_info'
+
+    = yield
