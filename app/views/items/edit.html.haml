@@ -1,6 +1,6 @@
 %h2 Edit item
 .row
   .col-sm-6.col-sm-offset-3
-    = form_for @item do |f|
+    = simple_form_for @item do |f|
       = render partial: 'form', locals: { f: f }
       %p= f.submit 'Save item', class: 'btn btn-success'
