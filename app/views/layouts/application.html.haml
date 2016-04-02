@@ -7,14 +7,18 @@
     = csrf_meta_tags
   %body
 
-    %p.notice= notice
-    %p.alert= alert
+    .text-center
+      %p.notice= notice
+      %p.alert= alert
 
-    = render partial: 'layouts/session_info'
+      = render partial: 'layouts/session_info'
 
-    %p{:style => "color: #ff7b74"}
-      = flash[:error]
-    %p{:style => "color: #378060"}
-      = flash[:success]
+      %p{:style => "color: #ff7b74"}
+        = flash[:error]
+      %p{:style => "color: #378060"}
+        = flash[:success]
 
-    = yield
+    .container.text-center
+      .row
+        .col-md-12
+          = yield

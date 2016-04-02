@@ -1,10 +1,15 @@
-%p
-  Price: #{f.text_field :price}
-%p
-  Name: #{f.text_field :name}
-%p
-  Description: #{f.text_area :description}
-%p
-  Weight: #{f.text_field :weight}
-%p
-  Image: #{f.file_field :image}
+.form-group
+  = f.label :price
+  = f.text_field :price, class: 'form-control'
+.form-group
+  = f.label :name
+  = f.text_field :name, class: 'form-control'
+.form-group
+  = f.label :description
+  = f.text_area :description, class: 'form-control', rows: '10'
+.form-group
+  = f.label :weight
+  = f.text_field :weight, class: 'form-control'
+.form-group
+  = f.label :image
+  = f.file_field :image, class: 'text-center'
