@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   root 'items#index'
 
@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   get 'admin/users_count' => 'admin#users_count'
+
 end
+
