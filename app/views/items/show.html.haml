@@ -1,4 +1,7 @@
 %h2= @item.name
+
+%p= image_tag @item.image.normal if @item.image.present?
+
 %ul
   %li #{t('item.price')}: #{@item.price}$
   %li #{t('item.description')}: #{urls_to_links(urls_to_images(@item.description))}

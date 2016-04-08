@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails', '~> 0.9.0'
 
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'carrierwave', '~> 0.11.0'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
