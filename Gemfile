@@ -16,6 +16,7 @@ gem 'haml-rails', '~> 0.9.0'
 
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'carrierwave', '~> 0.11.0'
+gem 'jcrop-rails-v2', '~> 0.9.12.3'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'

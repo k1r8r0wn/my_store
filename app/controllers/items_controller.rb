@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :find_item,      only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :find_item,      only: [:show, :edit, :update, :destroy, :upvote, :crop_image]
   before_action :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
   # /items GET
@@ -37,8 +37,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     if @item.errors.empty?
-      flash[:success] = 'Your item is successfully created!'
-      redirect_to item_path(@item) # /items/:id
+      redirect_to crop_image_item_path(@item)
     else
       flash.now[:error] = 'You made mistakes in your form. Please correct them.'
       render :new
@@ -49,8 +48,7 @@ class ItemsController < ApplicationController
   def update
     @item.update_attributes(item_params)
     if @item.errors.empty?
-      flash[:success] = 'Your item is successfully updated!'
-      redirect_to item_path(@item)
+      redirect_to crop_image_item_path(@item)
     else
       flash.now[:error] = 'You made mistakes in your form. Please correct them.'
       render :edit
@@ -68,6 +66,14 @@ class ItemsController < ApplicationController
   def upvote
     @item.increment!(:votes_count)
     redirect_to items_path
+  end
+
+  def crop_image
+    if request.put?
+      @item.crop_image!(params[:item][:image_crop_data])
+      flash[:success] = 'Your item is successfully updated!'
+      redirect_to item_path(@item)
+    end
   end
 
   private

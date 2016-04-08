@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
-    get 'upvote', on: :member
+    member do
+      get 'upvote'
+      get 'crop_image'
+      put 'crop_image'
+    end
     get 'expensive', on: :collection
   end
 
