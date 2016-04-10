@@ -43,6 +43,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
 end
 
 group :test do
@@ -50,3 +51,4 @@ group :test do
   gem 'factory_girl_rails', '~> 4.6'
   gem 'simplecov', '~> 0.11.2', require: false
 end
+
