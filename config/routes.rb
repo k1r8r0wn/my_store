@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  root 'items#index'
+  root 'pages#frontpage'
 
   resources :items do
     member do

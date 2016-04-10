@@ -1,26 +1,32 @@
-%h1 Items
+- @page_description = 'List of all items in our store'
+- @page_keywords = 'buy purchase items online store cheap'
+
+%h1= @page_title = 'List of all items'
+
 - if @items.empty?
   %b No items in the store
 - else
-  %table
-    %thead
-      %tr
-        %th ID
-        %th Image
-        %th Name
-        %th Created at
-        %th Price
-        %th Delete?
-        %th Raiting
-    %tbody
-      - @items.each do |item|
-        %tr{'data-item_id': "#{item.id}"}
-          %td= item.id
-          %td= image_tag item.image.thumb if item.image.present?
-          %td= link_to item.name, item_path(item)
-          %td #{item.created_at}$
-          %td #{item.price}$
-          %td
-            %span.delete_action
-              Delete
-          %td #{item.votes_count}, #{link_to '+', upvote_item_path(item)}
+  .table-responsi-e
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th ID
+          %th Image
+          %th Name
+          %th Created at
+          %th Price
+          %th Delete?
+          %th Raiting
+      %tbody
+        - @items.each do |item|
+          %tr{'data-item_id': "#{item.id}"}
+            %td= item.id
+            %td= image_tag item.image.thumb if item.image.present?
+            %td= link_to item.name, item_path(item)
+            %td #{item.created_at}$
+            %td #{item.price}$
+            %td
+              %span.delete_action
+                Delete
+            %td #{item.votes_count}, #{link_to '+', upvote_item_path(item)}
+

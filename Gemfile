@@ -27,6 +27,8 @@ gem 'recaptcha', '~> 1.3', require: 'recaptcha/rails'
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+gem 'meta-tags', '~> 2.1'
+
 gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 
 gem 'jquery-rails'

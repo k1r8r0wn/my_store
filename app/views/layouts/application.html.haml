@@ -1,11 +1,16 @@
 !!!
 %html
   %head
-    %title MyStore
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    = display_meta_tags(site: 'MyStore',
+                        title: page_title,
+                        reverse: true,
+                        description: @page_description,
+                        keywords: @page_keywords)
   %body
 
     .text-center
