@@ -17,6 +17,7 @@
 
 @import 'bootstrap';
 
+$black: #000;
 $green: #378060;
 $red: #f1837b;
 $grey: #666;
@@ -28,15 +29,6 @@ body {
 
 .email {
   margin-top: 20px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-
-  li {
-    list-style: none;
-  }
 }
 
 .delete_action {
@@ -76,5 +68,24 @@ ul {
     -o-transform-origin: 0 0;
     transform-origin: 0 0;
   }
+}
+
+.menu {
+  width: 200px;
+  margin: 2em auto 1em;
+  text-align: left;
+
+  a.current {
+    color: $black;
+    cursor: default;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.item_info li {
+  list-style: none;
 }
 

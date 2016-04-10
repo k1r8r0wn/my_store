@@ -31,6 +31,8 @@ gem 'meta-tags', '~> 2.1'
 
 gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 
+gem 'mmmenu', '~> 0.5.2'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
