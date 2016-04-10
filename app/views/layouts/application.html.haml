@@ -2,6 +2,7 @@
 %html
   %head
     %title MyStore
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -11,14 +12,18 @@
       %p.notice= notice
       %p.alert= alert
 
-      = render partial: 'layouts/session_info'
+      - if flash[:error]
+        .flash.error
+          = flash[:error]
 
-      %p{:style => "color: #ff7b74"}
-        = flash[:error]
-      %p{:style => "color: #378060"}
-        = flash[:success]
+      - if flash[:success]
+        .flash.success
+          = flash[:success]
+
+      = render partial: 'layouts/session_info'
 
     .container.text-center
       .row
         .col-md-12
           = yield
+

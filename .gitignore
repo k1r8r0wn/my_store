@@ -21,3 +21,6 @@
 .rspec
 public/uploads
 coverage
+
+# Ignore application configuration
+/config/application.yml

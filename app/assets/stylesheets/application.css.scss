@@ -17,18 +17,27 @@
 
 @import 'bootstrap';
 
+$green: #378060;
+$red: #f1837b;
+$grey: #666;
+$white: #fff;
+
+body {
+  min-width: 310px;
+}
+
 .email {
   margin-top: 20px;
 }
 
 table {
   border-spacing: 0;
-  border: 1px solid #666;
+  border: 1px solid $grey;
   margin: 0 auto;
   text-align: center;
 
   th, td {
-    border: 1px solid #666;
+    border: 1px solid $grey;
     padding: .5em;
   }
 }
@@ -43,8 +52,41 @@ ul {
 }
 
 .delete_action {
-  color: #f1837b;
+  color: $red;
   border-bottom: dotted;
   cursor: pointer;
+}
+
+.flash {
+  color: $white;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 7px;
+
+  &.error {
+    background-color: $red;
+  }
+
+  &.success {
+    background-color: $green;
+  }
+}
+
+.g-recaptcha {
+  display: inline-block;
+  margin: 0 auto;
+
+  @media screen and (max-width: 320px) {
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
 }
 

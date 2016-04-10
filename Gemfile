@@ -23,6 +23,10 @@ gem 'jcrop-rails-v2', '~> 0.9.12.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+gem 'recaptcha', '~> 1.3', require: 'recaptcha/rails'
+
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
 gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 
 gem 'jquery-rails'
