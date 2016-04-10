@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+gem 'redis-objects', '~> 1.2', '>= 1.2.1'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'

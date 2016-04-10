@@ -33,6 +33,12 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include ControllerMacros, type: :controller
 
+  config.before(:each) do
+    Redis.current.keys("#{Rails.application.class.parent_name}:#{Rails.env}*").each do |k|
+      Redis.current.del k
+    end
+  end
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

@@ -6,19 +6,28 @@ describe ItemsController, type: :controller do
 
   describe 'show action' do
 
+    before(:each) do
+      @item = create(:item)
+    end
+
     it 'renders show template if an item is found' do
-      item = create(:item)
-      get :show, id: item.id
+      get :show, id: @item.id
       expect(response).to render_template('show')
+    end
+
+    it 'updates views counter' do
+      expect(@item.views.value).to eq(0)
+      get :show, id: @item.id
+      expect(@item.views.value).to eq(1)
     end
 
   end
 
   describe 'create action' do
 
-    it 'redirects to item path if validations pass' do
+    it 'redirects to crop image item path if validations pass' do
       post :create, item: { name: 'Item 1', price: '10' }, admin: 1
-      expect(response).to redirect_to(item_path(assigns(:item)))
+      expect(response).to redirect_to(crop_image_item_path(assigns(:item)))
     end
 
     it 'renders new page again if validations fail' do
@@ -44,3 +53,4 @@ describe ItemsController, type: :controller do
   end
 
 end
+
