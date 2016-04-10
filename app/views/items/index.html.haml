@@ -1,6 +1,8 @@
 - @page_description = 'List of all items in our store'
 - @page_keywords = 'buy purchase items online store cheap'
 
+= paginate @items
+
 %h1= @page_title = 'List of all items'
 
 - if @items.empty?
@@ -30,3 +32,4 @@
                 Delete
             %td #{item.votes_count}, #{link_to '+', upvote_item_path(item)}
 
+= paginate @items
