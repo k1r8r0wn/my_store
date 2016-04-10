@@ -34,6 +34,8 @@ gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 gem 'mmmenu', '~> 0.5.2'
 gem 'acts-as-taggable-on', '~> 3.5'
 
+gem 'frontend_notifier', '~> 0.1.5'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'

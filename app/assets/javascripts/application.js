@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.Jcrop
+//= require lib/_frontend_notifier
 //= require_tree .
-

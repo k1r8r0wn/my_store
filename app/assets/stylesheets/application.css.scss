@@ -16,6 +16,7 @@
  */
 
 @import 'bootstrap';
+@import 'frontend_notifier';
 
 $black: #000;
 $green: #378060;
@@ -88,4 +89,3 @@ body {
 .item_info li {
   list-style: none;
 }
-

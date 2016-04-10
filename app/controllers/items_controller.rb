@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
     if @item.errors.empty?
       redirect_to crop_image_item_path(@item)
     else
-      flash.now[:error] = 'You made mistakes in your form. Please correct them.'
+      flash.now[:error] = join_model_errors(@item)
       render :new
     end
   end
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     if @item.errors.empty?
       redirect_to crop_image_item_path(@item)
     else
-      flash.now[:error] = 'You made mistakes in your form. Please correct them.'
+      flash.now[:error] = join_model_errors(@item)
       render :edit
     end
   end

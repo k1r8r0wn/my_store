@@ -12,19 +12,8 @@
                         description: @page_description,
                         keywords: @page_keywords)
   %body
-
     .text-center
-      %p.notice= notice
-      %p.alert= alert
-
-      - if flash[:error]
-        .flash.error
-          = flash[:error]
-
-      - if flash[:success]
-        .flash.success
-          = flash[:success]
-
+      = render partial: 'shared/frontend_notifier'
       = render partial: 'layouts/session_info'
 
       = build_mmmenu(@menu)
@@ -33,4 +22,3 @@
       .row
         .col-md-12
           = yield
-
