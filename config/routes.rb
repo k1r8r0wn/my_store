@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get 'expensive', on: :collection
   end
 
+  resource :carts
+
   get 'admin/users_count' => 'admin#users_count'
 
 end
