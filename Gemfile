@@ -32,6 +32,7 @@ gem 'meta-tags', '~> 2.1'
 gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 
 gem 'mmmenu', '~> 0.5.2'
+gem 'acts-as-taggable-on', '~> 3.5'
 
 gem 'jquery-rails'
 gem 'turbolinks'

@@ -7,5 +7,6 @@
     %li #{t('item.price')}: #{@item.price}$
     %li #{t('item.description')}: #{urls_to_links(urls_to_images(@item.description))}
     %li #{t('item.weight')}: #{@item.weight} pounds
+    %li #{t('item.tags')}: #{@item.tag_list.join(', ')}
     %li #{t('item.views')}: #{@item.views.value} time(-s)
 

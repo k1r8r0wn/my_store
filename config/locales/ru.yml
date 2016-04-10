@@ -3,6 +3,8 @@ ru:
     price: 'Цена'
     description: 'Описание'
     weight: 'Вес'
+    tags: 'Теги'
+    views: 'Просмотров'
 
   activerecord:
     models:
@@ -14,5 +16,4 @@ ru:
         description: 'Описание'
         weight: 'Вес'
         image: 'Изображение'
-        views: 'Просмотров'
 

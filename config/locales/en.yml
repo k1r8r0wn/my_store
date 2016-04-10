@@ -24,6 +24,8 @@ en:
     price: 'Price'
     description: 'Description'
     weight: 'Weight'
+    tags: 'Tags'
+    views: 'Views'
 
   activerecord:
     models:
@@ -35,5 +37,4 @@ en:
         description: 'Description'
         weight: 'Weight'
         image: 'Image'
-        views: 'Views'
 

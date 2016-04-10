@@ -15,6 +15,8 @@ class Item < ActiveRecord::Base
   include Redis::Objects
   counter :views
 
+  acts_as_taggable
+
   def crop_image!(c)
     c.each { |k,v| c[k] = v.to_i }
     @image_crop_data = c
