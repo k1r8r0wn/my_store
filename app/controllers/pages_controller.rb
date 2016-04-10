@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
 
-  def frontpage
-
-  end
+  def frontpage; end
 
 end
 
