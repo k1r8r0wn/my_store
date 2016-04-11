@@ -38,6 +38,8 @@ gem 'frontend_notifier', '~> 0.1.5'
 
 gem 'kaminari', '~> 0.16.3'
 
+gem 'dalli', '~> 2.7', '>= 2.7.6'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
