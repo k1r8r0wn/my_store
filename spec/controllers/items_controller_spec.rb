@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ItemsController, type: :controller do
 
-  it_renders_404_page_whwn_item_is_not_found :show, :edit, :update, :destroy
+  it_renders_404_page_when_item_is_not_found :show, :edit, :update, :destroy
 
   describe 'show action' do
 

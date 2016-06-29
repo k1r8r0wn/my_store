@@ -6,7 +6,7 @@ module ControllerMacros
 
   module ClassMethods
 
-    def it_renders_404_page_whwn_item_is_not_found(*actions)
+    def it_renders_404_page_when_item_is_not_found(*actions)
       actions.each do |a|
         it "#{a} renders 404 page when item is not found" do
           verb = if a == :update
